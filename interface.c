@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void welcome(int sourceId, int dstId, int hod) {
 
     printf("Bienvenide \n \n");
@@ -12,6 +11,6 @@ void welcome(int sourceId, int dstId, int hod) {
     scanf("%i", &dstId);
     printf("3. Ingrese hora del día: ");
     scanf("%i", &hod);
-    printf("\n%d", dstId);
+    printf("\nGracias");
 
 }

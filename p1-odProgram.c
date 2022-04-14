@@ -1,7 +1,8 @@
 //#include "Hash.h"
-#include "interface.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "interface.h"
+#include "hash.h"
 
 int main(int argc, char** argv) {
 
@@ -12,8 +13,6 @@ int main(int argc, char** argv) {
     FILE *data;
 	data = fopen ( "datos.csv", "r" );        
 	if (data == NULL) {fputs ("File error",stderr); exit (1);}
-    
-    printf("\nGracias");
 
 	fclose ( data );
 

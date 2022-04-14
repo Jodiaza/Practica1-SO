@@ -1,4 +1,4 @@
-#include "Hash.h"
+#include "hash.h"
 
 void createIndexTable(){
 
