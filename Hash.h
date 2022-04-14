@@ -1,0 +1,3 @@
+
+void createIndexTable();
+int search();
