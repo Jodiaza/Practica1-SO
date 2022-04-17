@@ -1,7 +1,6 @@
 #pragma once
 
-// Función que crea la tabla de índices
+#include "travel.h"
 void createIndexTable();
-
-// Función de busqueda
-int search();
+void createFindTable(Travel t);
+int search(char *d);
