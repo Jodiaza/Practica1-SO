@@ -66,8 +66,7 @@ void createFindTable(){
 	}
 
 }*/
-
-void createFindTable() {
+void createFindTable(){
 	// hacer un archivo con los datos ordenados
 	// mientras ordena los datos crear otro archivo con la direccion 
 	//del cursor del primer elemento de cada ido en el  primer archivo
@@ -80,17 +79,17 @@ void createFindTable() {
 	char *ido;
 	Travel t;
 	int index;
-	for (int i = 0; i<1160; i++){
+	for (int i = 0; i<1160){
 		bool find = false;	//booleano para controlar que el ido exista en la primera columna
-		bool first = true;  //buleano para evidenciar captura del primer elemento
-		while(fgets(cadena,50,fp)){
+		bool first = true:  //buleano para evidenciar captura del primer elemento
+		while(fgets(cadena,50,fp);){
 			index = ftell(fw);				//capturamos posicion del cursor en el nuevo archivo
-			ido = strtok(cadena,",");		//capturamos primer dato en columna 1 
+			ido = srttok(cadena,",");		//capturamos primer dato en columna 1 
 			if(atoi(ido)== i+1){			//comparamos si es igual al indice que estamos guardando
 				find = true;				// booleano en estado encontrado
 				if(first){					//si es el primero guardamos posicion en el archivo de indices
 					appendIndex(i+1,index);	
-					first = false;			//ya no es el primer elemento
+					fist = false;			//ya no es el primer elemento
 				}
 				strcat(stpcpy(concat,ido),",");	//concateno el ido
 				for(int j = 0;j < 3; j++){      
@@ -98,7 +97,7 @@ void createFindTable() {
 					strcat(concat,caux);		//concatenamos los datos que vamos a guardar
 				}
 				strcat(concat,"\n");				
-				fputs(concat, fw);		//escribimos los datos en el nuevo archivo ordenado
+				fputs(fw,concat);		//escribimos los datos en el nuevo archivo ordenado
 			}
 		}		
 		if(!find){
@@ -107,7 +106,7 @@ void createFindTable() {
 		}
 		fseek(fp,0,SEEK_SET);		//volvemos a poner el cursor en el inicio del archivo
 	}	
-	fclose(fp);
+	fclose(pf);
 	fclose(fw);
 }
 
@@ -117,12 +116,12 @@ void appendIndex(int ido, int dir){
 	//el indice, debe ser un numero de ocho caracteres, y relled¿nado su principio 
 	//con ceros: ejm 456 =  000000456
 	FILE *fi;
-	fi = fopen("Index.txt","a+");
-	printf("ido %i y posocion cursor %li ",ido,ftell(fi));
+	fi = open("Index.txt","a+");
+	printf("ido %i y posocion cursor %i ",ido,ftell(fi));
 	char *cdir; //char donde se almacenara el ido con longitud de 10
 	convertNumber(dir,cdir);
 	strcat(cdir,"\n");
-	fputs(cdir, fi);
+	fputs(fi,cdir);
 	
 		
 }
@@ -153,20 +152,22 @@ void convertNumber(int num, char* finalText) {
     
 	char text[10]; 
 
-	sprintf(text, "%d", num); 
-	char * stuffing;
+	sprintf(text, "%d", num);   
 	
 	int longText = 10;
-	if (num < 0){
-		stuffing = "-000000000";
+	if (num<0){
+		char *stuffing = "-000000000";
 	}else{
-		stuffing = "0000000000";
+		char *stuffing = "-000000000";
 	}
     //Aquí almacenamos el resultado. Debe ser lo suficientemente larga
     // Obtener la diferencia de longitud
     int diference = longText - (int) strlen(text);
     sprintf(finalText, "%*.*s%s ", diference, diference, stuffing, text);
     printf("%s\n", finalText);
+    
+   
+    
 }
 
 /*
